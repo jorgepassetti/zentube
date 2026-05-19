@@ -6,7 +6,7 @@ const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => [...document.querySelectorAll(sel)];
 
 const KOFI_URL = 'https://ko-fi.com/H6E01ZT8Z2';
-const GITHUB_SPONSORS_URL = 'https://github.com/sponsors/zentube';
+const GITHUB_SPONSORS_URL = 'https://github.com/sponsors/jorgepassetti';
 
 const HIDE_KEYS = ['home', 'related', 'comments', 'shorts', 'endscreen', 'viewCount'];
 
