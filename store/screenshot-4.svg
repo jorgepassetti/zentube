@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+  <defs>
+    <linearGradient id="s4bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#14B8A6" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="s4grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#14B8A6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="#0F0F12"/>
+  <rect width="1280" height="800" fill="url(#s4bg)" opacity="0.92"/>
+
+  <!-- Big break timer (centered) -->
+  <text x="640" y="240" text-anchor="middle" font-family="Inter, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.8" fill="#fff" opacity="0.96">Break time</text>
+
+  <text x="640" y="470" text-anchor="middle" font-family="Inter, sans-serif" font-size="200" font-weight="200" letter-spacing="-6" fill="#fff" font-variant-numeric="tabular-nums">04:21</text>
+
+  <text x="640" y="540" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" fill="#fff" opacity="0.92">Step away from the screen.</text>
+  <text x="640" y="570" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" fill="#fff" opacity="0.92">Stretch. Breathe. Get water.</text>
+
+  <!-- Stop session button -->
+  <g transform="translate(530, 620)">
+    <rect width="220" height="52" rx="12" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+    <text x="110" y="33" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="500" fill="#fff">Stop session</text>
+  </g>
+
+  <!-- Heading at top -->
+  <text x="80" y="80" font-family="Inter, sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#fff" opacity="0.9">POMODORO MODE</text>
+
+  <!-- Subtitle at bottom -->
+  <text x="640" y="740" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" fill="#fff" opacity="0.85">Forced breaks. Pauses video. Blocks YouTube during rest.</text>
+</svg>

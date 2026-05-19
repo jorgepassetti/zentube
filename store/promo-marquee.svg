@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 560" width="1400" height="560">
+  <defs>
+    <linearGradient id="bgM" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F0F12"/>
+      <stop offset="100%" stop-color="#1A1A22"/>
+    </linearGradient>
+    <linearGradient id="brandM" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#14B8A6"/>
+    </linearGradient>
+    <radialGradient id="glowM" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowM2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#14B8A6" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#14B8A6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1400" height="560" fill="url(#bgM)"/>
+  <ellipse cx="300" cy="450" rx="400" ry="300" fill="url(#glowM)"/>
+  <ellipse cx="1200" cy="120" rx="400" ry="280" fill="url(#glowM2)"/>
+
+  <!-- Logo -->
+  <g transform="translate(220, 280)">
+    <circle cx="0" cy="0" r="84" fill="none" stroke="url(#brandM)" stroke-width="14" stroke-linecap="round" stroke-dasharray="455 660" transform="rotate(-95)"/>
+    <polygon points="-22,-36 -22,36 44,0" fill="url(#brandM)"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="380" y="270" font-family="Inter, -apple-system, sans-serif" font-size="108" font-weight="800" letter-spacing="-3" fill="url(#brandM)">ZenTube</text>
+
+  <!-- Tagline -->
+  <text x="380" y="335" font-family="Inter, sans-serif" font-size="32" font-weight="500" fill="#F4F4F5" opacity="0.92">YouTube, but on your terms.</text>
+
+  <!-- Subline -->
+  <text x="380" y="380" font-family="Inter, sans-serif" font-size="18" font-weight="400" fill="#A1A1AA">Free. Open-source. No tracking. No subscription.</text>
+
+  <!-- Feature pills -->
+  <g font-family="Inter, sans-serif" font-size="15" font-weight="500">
+    <g transform="translate(380, 420)">
+      <rect width="190" height="38" rx="19" fill="#25252F"/>
+      <text x="95" y="24" text-anchor="middle" fill="#F4F4F5">Hide distractions</text>
+    </g>
+    <g transform="translate(585, 420)">
+      <rect width="160" height="38" rx="19" fill="#25252F"/>
+      <text x="80" y="24" text-anchor="middle" fill="#F4F4F5">Block Shorts</text>
+    </g>
+    <g transform="translate(760, 420)">
+      <rect width="170" height="38" rx="19" fill="#25252F"/>
+      <text x="85" y="24" text-anchor="middle" fill="#F4F4F5">Daily limits</text>
+    </g>
+    <g transform="translate(945, 420)">
+      <rect width="180" height="38" rx="19" fill="#25252F"/>
+      <text x="90" y="24" text-anchor="middle" fill="#F4F4F5">Pomodoro mode</text>
+    </g>
+  </g>
+</svg>

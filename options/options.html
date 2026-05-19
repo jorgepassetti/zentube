@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZenTube · Settings</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="zt-opt-grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#6366F1"/>
+              <stop offset="100%" stop-color="#14B8A6"/>
+            </linearGradient>
+          </defs>
+          <circle cx="16" cy="16" r="13" fill="none" stroke="url(#zt-opt-grad)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="70 100" transform="rotate(-90 16 16)"/>
+          <polygon points="13,11 13,21 22,16" fill="url(#zt-opt-grad)"/>
+        </svg>
+        <div>
+          <div class="brand-name">ZenTube</div>
+          <div class="brand-sub">YouTube · Focus</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-item active" data-tab="focus">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          <span data-i18n="navFocus">Focus</span>
+        </button>
+        <button class="nav-item" data-tab="time">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span data-i18n="navTime">Time</span>
+        </button>
+        <button class="nav-item" data-tab="channels">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          <span data-i18n="navChannels">Channels</span>
+        </button>
+        <button class="nav-item" data-tab="mindful">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M22 2 12 12"/></svg>
+          <span data-i18n="navMindful">Mindful</span>
+        </button>
+        <button class="nav-item" data-tab="stats">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          <span data-i18n="navStats">Stats</span>
+        </button>
+        <button class="nav-item" data-tab="advanced">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+          <span data-i18n="navAdvanced">Advanced</span>
+        </button>
+        <button class="nav-item" data-tab="support">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span data-i18n="navSupport">Support</span>
+        </button>
+        <button class="nav-item" data-tab="about">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span data-i18n="navAbout">About</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-foot">
+        <label class="enable-row">
+          <span>
+            <span class="enable-title">ZenTube</span>
+            <span class="enable-sub" id="enable-sub" data-i18n="statusEnabled">Enabled</span>
+          </span>
+          <label class="switch"><input type="checkbox" id="enabled-main" checked /><span class="slider"></span></label>
+        </label>
+        <div class="version" data-i18n="versionFooter">v1.0 · free forever</div>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+
+      <!-- FOCUS TAB -->
+      <section class="tab active" data-tab="focus">
+        <header class="page-header">
+          <h1 data-i18n="focusPageTitle">Focus</h1>
+          <p data-i18n="focusPageSub">Pick a preset or customize exactly what disappears from YouTube.</p>
+        </header>
+
+        <div class="mode-cards" id="mode-cards">
+          <button class="mode-card" data-mode="off">
+            <div class="mode-card-name" data-i18n="modeOff">Off</div>
+            <div class="mode-card-desc" data-i18n="modeOffShort">YouTube behaves normally.</div>
+          </button>
+          <button class="mode-card active" data-mode="casual">
+            <div class="mode-card-name" data-i18n="modeCasual">Casual</div>
+            <div class="mode-card-desc" data-i18n="modeCasualShort">Just hide Shorts + end-screen.</div>
+          </button>
+          <button class="mode-card" data-mode="learning">
+            <div class="mode-card-name" data-i18n="modeLearning">Learning</div>
+            <div class="mode-card-desc" data-i18n="modeLearningShort">Hide feed + recs + counts. Keep comments.</div>
+          </button>
+          <button class="mode-card" data-mode="deep">
+            <div class="mode-card-name" data-i18n="modeDeepWork">Deep Work</div>
+            <div class="mode-card-desc" data-i18n="modeDeepShort">Hide everything. Grayscale on.</div>
+          </button>
+        </div>
+
+        <div class="callout" id="custom-callout" hidden data-i18n="customCalloutText">
+          Custom mode active. Your individual toggles below override the preset.
+        </div>
+
+        <h2 class="section-h" data-i18n="whatToHide">What to hide</h2>
+        <div class="grid-rows" id="hide-grid">
+          <!-- Filled by JS -->
+        </div>
+
+        <h2 class="section-h" data-i18n="visualTweaks">Visual tweaks</h2>
+        <div class="grid-rows" id="visual-grid"></div>
+      </section>
+
+      <!-- TIME TAB -->
+      <section class="tab" data-tab="time">
+        <header class="page-header">
+          <h1 data-i18n="timePageTitle">Time</h1>
+          <p data-i18n="timePageSub">Set a daily limit and YouTube will close itself when you hit it.</p>
+        </header>
+
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <div class="card-title" data-i18n="timeLimitTitle">Daily time limit</div>
+              <div class="card-sub" data-i18n="timeLimitSub">Block YouTube when you exceed this many minutes per day.</div>
+            </div>
+            <label class="switch"><input type="checkbox" id="time-limit-enabled" /><span class="slider"></span></label>
+          </div>
+          <div class="card-body" id="time-limit-body">
+            <div class="slider-row">
+              <input type="range" id="time-limit-range" min="5" max="240" step="5" value="60" />
+              <input type="number" id="time-limit-number" min="1" max="600" value="60" />
+              <span class="unit" data-i18n="minPerDay">min / day</span>
+            </div>
+            <div class="hint"><span data-i18n="todayWatchedPrefix">Today you've watched</span> <strong id="today-min">0</strong> <span data-i18n="todayWatchedSuffix">min.</span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <div class="card-title" data-i18n="autoplayTitle">Disable autoplay</div>
+              <div class="card-sub" data-i18n="autoplaySub">Stops YouTube from auto-playing the next video.</div>
+            </div>
+            <label class="switch"><input type="checkbox" id="disable-autoplay" /><span class="slider"></span></label>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <div class="card-title" data-i18n="autopauseTitle">Auto-pause when tab is hidden</div>
+              <div class="card-sub" data-i18n="autopauseSub">Pauses the video when you switch tabs.</div>
+            </div>
+            <label class="switch"><input type="checkbox" id="auto-pause" /><span class="slider"></span></label>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <div class="card-title" data-i18n="blockShortsTitle">Block Shorts (redirect to regular video)</div>
+              <div class="card-sub" data-i18n="blockShortsSub">Opening a /shorts/ URL redirects to the normal /watch view.</div>
+            </div>
+            <label class="switch"><input type="checkbox" id="block-shorts-url" /><span class="slider"></span></label>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <div class="card-title" data-i18n="scheduleTitle">Scheduled blocking</div>
+              <div class="card-sub" data-i18n="scheduleSub">Block YouTube during specific hours and days. Great for work blocks.</div>
+            </div>
+            <label class="switch"><input type="checkbox" id="schedule-enabled" /><span class="slider"></span></label>
+          </div>
+          <div class="card-body">
+            <div class="schedule-rules" id="schedule-rules"></div>
+            <button class="btn" id="add-schedule-rule" data-i18n="scheduleAddBtn">+ Add schedule rule</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHANNELS TAB -->
+      <section class="tab" data-tab="channels">
+        <header class="page-header">
+          <h1 data-i18n="channelsPageTitle">Channels</h1>
+          <p data-i18n="channelsPageSub">Allow only specific channels, or block ones that suck your time.</p>
+        </header>
+
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <div class="card-title" data-i18n="whitelistModeTitle">Whitelist mode</div>
+              <div class="card-sub" data-i18n="whitelistModeSub">If on, only channels in your whitelist are accessible.</div>
+            </div>
+            <label class="switch"><input type="checkbox" id="whitelist-mode" /><span class="slider"></span></label>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <div class="card-title" data-i18n="allowedChannels">Allowed channels</div>
+            <div class="card-sub" data-i18n="allowedChannelsSub">Comma-separated channel names exactly as they appear on YouTube.</div>
+            <textarea id="whitelist" rows="6" placeholder="e.g. Veritasium, Kurzgesagt – In a Nutshell"></textarea>
+          </div>
+          <div class="card">
+            <div class="card-title" data-i18n="blockedChannels">Blocked channels</div>
+            <div class="card-sub" data-i18n="blockedChannelsSub">Comma-separated. Pages from these channels will be blocked.</div>
+            <textarea id="blacklist" rows="6" placeholder="e.g. Some Drama Channel"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- MINDFUL TAB -->
+      <section class="tab" data-tab="mindful">
+        <header class="page-header">
+          <h1 data-i18n="mindfulPageTitle">Mindful</h1>
+          <p data-i18n="mindfulPageSub">Add friction so you watch YouTube intentionally, not by reflex.</p>
+        </header>
+
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <div class="card-title" data-i18n="mindfulPauseTitle">Mindful pause</div>
+              <div class="card-sub" data-i18n="mindfulPauseSub">Before YouTube loads, ask "why are you here?" with a forced delay.</div>
+            </div>
+            <label class="switch"><input type="checkbox" id="mindful-enabled" /><span class="slider"></span></label>
+          </div>
+          <div class="card-body">
+            <div class="slider-row">
+              <span class="unit-left" data-i18n="mindfulDelay">Delay</span>
+              <input type="range" id="mindful-delay" min="2" max="30" step="1" value="5" />
+              <input type="number" id="mindful-delay-number" min="1" max="60" value="5" />
+              <span class="unit" data-i18n="seconds">seconds</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <div class="card-title" data-i18n="customHomeTitle">Custom homepage</div>
+              <div class="card-sub" data-i18n="customHomeSub">Replace the YouTube home feed with a clock, greeting and your own quote.</div>
+            </div>
+            <label class="switch"><input type="checkbox" id="custom-home-enabled" /><span class="slider"></span></label>
+          </div>
+          <div class="card-body">
+            <label class="form-label" data-i18n="customHomeQuoteLabel">Your daily quote (optional)</label>
+            <input type="text" id="custom-home-quote" data-i18n-placeholder="customHomePlaceholder" placeholder="Leave blank for rotating Zen quotes." />
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <div class="card-title" data-i18n="widgetTitle">Show floating status pill</div>
+              <div class="card-sub" data-i18n="widgetSub">A small badge in the corner showing time today and your mode.</div>
+            </div>
+            <label class="switch"><input type="checkbox" id="show-widget" /><span class="slider"></span></label>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <div class="card-title" data-i18n="pomodoroTitle">Pomodoro timer</div>
+              <div class="card-sub" data-i18n="pomodoroSub">Watch for 25 minutes, then take a forced 5-minute break. Long break every 4 cycles.</div>
+            </div>
+            <label class="switch"><input type="checkbox" id="pomodoro-enabled" /><span class="slider"></span></label>
+          </div>
+          <div class="card-body">
+            <div class="pomodoro-grid">
+              <label class="form-label" data-i18n="pomodoroWork">Work minutes</label>
+              <input type="number" id="pomodoro-work" min="5" max="120" value="25" />
+              <label class="form-label" data-i18n="pomodoroShort">Short break (min)</label>
+              <input type="number" id="pomodoro-short" min="1" max="60" value="5" />
+              <label class="form-label" data-i18n="pomodoroLong">Long break (min)</label>
+              <input type="number" id="pomodoro-long" min="5" max="60" value="15" />
+              <label class="form-label" data-i18n="pomodoroCycles">Cycles before long break</label>
+              <input type="number" id="pomodoro-cycles" min="2" max="10" value="4" />
+            </div>
+            <div class="hint" data-i18n="pomodoroHint">Start the timer from the popup. During breaks, video pauses and YouTube is blocked.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STATS TAB -->
+      <section class="tab" data-tab="stats">
+        <header class="page-header">
+          <h1 data-i18n="statsPageTitle">Stats</h1>
+          <p data-i18n="statsPageSub">See your real YouTube relationship — measured, not guessed.</p>
+        </header>
+
+        <div class="stat-grid">
+          <div class="big-stat">
+            <div class="big-stat-value" id="big-today">0m</div>
+            <div class="big-stat-label" data-i18n="statTodayBig">Today</div>
+          </div>
+          <div class="big-stat">
+            <div class="big-stat-value" id="big-week">0m</div>
+            <div class="big-stat-label" data-i18n="statWeekBig">This week</div>
+          </div>
+          <div class="big-stat">
+            <div class="big-stat-value" id="big-streak">0</div>
+            <div class="big-stat-label" data-i18n="statStreakBig">Day streak under limit</div>
+          </div>
+          <div class="big-stat">
+            <div class="big-stat-value" id="big-total">0h</div>
+            <div class="big-stat-label" data-i18n="statLifetime">Lifetime</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title" data-i18n="last14Days">Last 14 days</div>
+          <div class="chart" id="chart"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-title" data-i18n="recentIntentionsTitle">Your recent intentions</div>
+          <div class="card-sub" data-i18n="recentIntentionsSub">What you've typed into the mindful pause.</div>
+          <ul class="intent-list" id="intent-list"></ul>
+        </div>
+
+        <div class="row-end">
+          <button class="btn-ghost" id="reset-stats" data-i18n="resetStats">Reset all stats</button>
+        </div>
+      </section>
+
+      <!-- ADVANCED TAB -->
+      <section class="tab" data-tab="advanced">
+        <header class="page-header">
+          <h1 data-i18n="advancedPageTitle">Advanced</h1>
+          <p data-i18n="advancedPageSub">Keyboard shortcuts, sync, and data tools.</p>
+        </header>
+
+        <div class="card">
+          <div class="card-title" data-i18n="shortcutsTitle">Keyboard shortcuts</div>
+          <table class="kbd-table">
+            <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd></td><td data-i18n="shortcutToggleDeep">Toggle Deep Work mode</td></tr>
+            <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Y</kbd></td><td data-i18n="shortcutOpenSettings">Open settings</td></tr>
+            <tr><td><kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd></td><td data-i18n="shortcutQuickDeep">Quick toggle Deep mode (on a YouTube tab)</td></tr>
+            <tr><td><kbd>/</kbd></td><td data-i18n="shortcutJumpSearch">From custom homepage, jump to search</td></tr>
+          </table>
+          <div class="hint"><span data-i18n="customizeAt">Customize at</span> <code>chrome://extensions/shortcuts</code></div>
+        </div>
+
+        <div class="card">
+          <div class="card-title" data-i18n="exportImportTitle">Export / import settings</div>
+          <div class="card-sub" data-i18n="exportImportSub">Save your config as JSON, or load one.</div>
+          <div class="btn-row">
+            <button class="btn" id="export-settings" data-i18n="exportBtn">Export</button>
+            <button class="btn" id="import-settings" data-i18n="importBtn">Import</button>
+            <input type="file" id="import-file" accept="application/json" hidden />
+          </div>
+        </div>
+      </section>
+
+      <!-- SUPPORT TAB -->
+      <section class="tab" data-tab="support">
+        <header class="page-header">
+          <h1 data-i18n="supportTitle">Support ZenTube</h1>
+          <p data-i18n="supportLead">ZenTube is free and always will be. If it helped you take back your time, consider a tip — it pays for hosting and keeps the project going.</p>
+        </header>
+
+        <div class="card support-card">
+          <div class="support-icon">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <h2 class="support-h" data-i18n="kofiH">Buy me a coffee</h2>
+          <p class="support-p" data-i18n="kofiP">One-time tip via Ko-fi. No fees on one-time donations. Takes 20 seconds.</p>
+          <a href="https://ko-fi.com/H6E01ZT8Z2" target="_blank" rel="noopener" class="kofi-button-wrap">
+            <img src="../icons/kofi-button.png" alt="Buy me a coffee at ko-fi.com" height="36" />
+          </a>
+        </div>
+
+        <div class="card support-card">
+          <div class="support-icon">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </div>
+          <h2 class="support-h" data-i18n="sponsorH">Become a recurring sponsor</h2>
+          <p class="support-p" data-i18n="sponsorP">Support development on GitHub Sponsors. Cancel anytime. 100% goes to the project.</p>
+          <a href="https://github.com/sponsors/zentube" target="_blank" rel="noopener" class="btn sponsor-btn">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="margin-right:8px;vertical-align:-2px;"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.84-2.34 4.68-4.57 4.93.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+          <span data-i18n="sponsorBtn">Sponsor on GitHub</span>
+          </a>
+        </div>
+
+        <div class="card support-thanks">
+          <p data-i18n="supportThanks">Even just sharing ZenTube with a friend helps a lot. Thank you for using it. 🙏</p>
+        </div>
+      </section>
+
+      <!-- ABOUT TAB -->
+      <section class="tab" data-tab="about">
+        <header class="page-header">
+          <h1 data-i18n="aboutPageTitle">About ZenTube</h1>
+        </header>
+
+        <div class="card center-card">
+          <svg class="logo-big" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="zt-about-grad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#6366F1"/>
+                <stop offset="100%" stop-color="#14B8A6"/>
+              </linearGradient>
+            </defs>
+            <circle cx="32" cy="32" r="26" fill="none" stroke="url(#zt-about-grad)" stroke-width="4" stroke-linecap="round" stroke-dasharray="140 200" transform="rotate(-90 32 32)"/>
+            <polygon points="26,22 26,42 44,32" fill="url(#zt-about-grad)"/>
+          </svg>
+          <h2 class="about-h" data-i18n="aboutHeadline">YouTube, but on your terms.</h2>
+          <p class="about-p" data-i18n="aboutP">Free, open-source, no account required. No tracking. Your data stays on your device.</p>
+          <div class="about-meta" data-i18n="aboutMeta">Version 1.0.0 · Made with care.</div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="toast" id="toast" hidden>Saved</div>
+
+  <script src="options.js"></script>
+</body>
+</html>

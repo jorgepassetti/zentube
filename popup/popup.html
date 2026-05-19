@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZenTube</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="zt-popup-grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#6366F1"/>
+              <stop offset="100%" stop-color="#14B8A6"/>
+            </linearGradient>
+          </defs>
+          <circle cx="16" cy="16" r="13" fill="none" stroke="url(#zt-popup-grad)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="70 100" transform="rotate(-90 16 16)"/>
+          <polygon points="13,11 13,21 22,16" fill="url(#zt-popup-grad)"/>
+        </svg>
+        <span class="brand-name">ZenTube</span>
+      </div>
+      <button class="icon-btn" id="open-options" title="Settings" aria-label="Settings">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Master toggle -->
+    <section class="card master">
+      <div class="master-text">
+        <div class="master-title">ZenTube</div>
+        <div class="master-sub" id="master-sub" data-i18n="activeOnYoutube">Active on YouTube</div>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="enabled-toggle" checked />
+        <span class="slider"></span>
+      </label>
+    </section>
+
+    <!-- Focus mode -->
+    <section class="section">
+      <div class="section-title" data-i18n="focusMode">Focus mode</div>
+      <div class="segmented" id="focus-mode-group">
+        <button data-mode="off" class="seg" data-i18n="modeOff">Off</button>
+        <button data-mode="casual" class="seg active" data-i18n="modeCasual">Casual</button>
+        <button data-mode="learning" class="seg" data-i18n="modeLearning">Learning</button>
+        <button data-mode="deep" class="seg" data-i18n="modeDeep">Deep</button>
+      </div>
+      <div class="mode-description" id="mode-desc">Hides Shorts and end-screen suggestions. Comments and home feed stay visible.</div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section stats-section">
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-value" id="stat-today">0m</div>
+          <div class="stat-label" data-i18n="statToday">today</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="stat-streak">0🔥</div>
+          <div class="stat-label" data-i18n="statStreak">day streak</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="stat-blocked">0</div>
+          <div class="stat-label" data-i18n="statBlocked">distractions hidden</div>
+        </div>
+      </div>
+      <div class="progress" id="progress-wrap" hidden>
+        <div class="progress-bar" id="progress-bar"></div>
+        <div class="progress-label" id="progress-label"></div>
+      </div>
+    </section>
+
+    <!-- Pomodoro -->
+    <section class="section" id="pomo-section" hidden>
+      <div class="section-title" data-i18n="pomoSectionTitle">Pomodoro</div>
+      <div class="pomo-card">
+        <div class="pomo-info">
+          <div class="pomo-phase" id="pomo-phase" data-i18n="pomoIdle">Idle</div>
+          <div class="pomo-clock" id="pomo-clock">--:--</div>
+        </div>
+        <button class="pomo-btn" id="pomo-toggle" data-i18n="pomoStart">Start focus</button>
+      </div>
+    </section>
+
+    <!-- Quick toggles -->
+    <section class="section">
+      <div class="section-title" data-i18n="quickHide">Quick hide</div>
+      <div class="toggles">
+        <label class="toggle-row" data-key="home">
+          <span class="toggle-label">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+            <span data-i18n="hideHome">Home feed</span>
+          </span>
+          <label class="switch sm"><input type="checkbox" /><span class="slider"></span></label>
+        </label>
+        <label class="toggle-row" data-key="related">
+          <span class="toggle-label">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            <span data-i18n="hideRelated">Recommendations</span>
+          </span>
+          <label class="switch sm"><input type="checkbox" /><span class="slider"></span></label>
+        </label>
+        <label class="toggle-row" data-key="comments">
+          <span class="toggle-label">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span data-i18n="hideComments">Comments</span>
+          </span>
+          <label class="switch sm"><input type="checkbox" /><span class="slider"></span></label>
+        </label>
+        <label class="toggle-row" data-key="shorts">
+          <span class="toggle-label">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span data-i18n="hideShorts">Shorts</span>
+          </span>
+          <label class="switch sm"><input type="checkbox" /><span class="slider"></span></label>
+        </label>
+        <label class="toggle-row" data-key="endscreen">
+          <span class="toggle-label">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <span data-i18n="hideEndscreen">End screen</span>
+          </span>
+          <label class="switch sm"><input type="checkbox" /><span class="slider"></span></label>
+        </label>
+        <label class="toggle-row" data-key="viewCount">
+          <span class="toggle-label">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <span data-i18n="hideCounts">View / like counts</span>
+          </span>
+          <label class="switch sm"><input type="checkbox" /><span class="slider"></span></label>
+        </label>
+        <label class="toggle-row" data-key="grayscale">
+          <span class="toggle-label">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 0 0 20z"/></svg>
+            <span data-i18n="hideGrayscale">Grayscale</span>
+          </span>
+          <label class="switch sm"><input type="checkbox" /><span class="slider"></span></label>
+        </label>
+      </div>
+    </section>
+
+    <!-- Donate -->
+    <section class="section donate-section">
+      <a href="#" id="donate-kofi" class="donate-btn donate-kofi" title="Support on Ko-fi">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <span data-i18n="donateKofi">Tip on Ko-fi</span>
+      </a>
+      <a href="#" id="donate-github" class="donate-btn donate-github" title="Sponsor on GitHub">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.84-2.34 4.68-4.57 4.93.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+        <span data-i18n="donateGithub">GitHub Sponsors</span>
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <button class="footer-btn" id="open-options-bottom" data-i18n="allSettings">All settings</button>
+      <div class="footer-meta" data-i18n="versionFooter">v1.0 · free forever</div>
+    </footer>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

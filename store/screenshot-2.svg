@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+  <defs>
+    <linearGradient id="s2bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F0F12"/>
+      <stop offset="100%" stop-color="#1A1A22"/>
+    </linearGradient>
+    <linearGradient id="s2brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#14B8A6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#s2bg)"/>
+
+  <!-- Header -->
+  <text x="80" y="100" font-family="Inter, sans-serif" font-size="20" font-weight="600" letter-spacing="2" fill="#A1A1AA">FEATURES</text>
+  <text x="80" y="170" font-family="Inter, sans-serif" font-size="64" font-weight="800" letter-spacing="-2" fill="#F4F4F5">Everything DF Tube has.</text>
+  <text x="80" y="240" font-family="Inter, sans-serif" font-size="64" font-weight="800" letter-spacing="-2" fill="url(#s2brand)">Plus all of this.</text>
+
+  <!-- Feature cards grid -->
+  <g font-family="Inter, sans-serif">
+    <!-- Card 1 -->
+    <g transform="translate(80, 320)">
+      <rect width="280" height="170" rx="16" fill="#1A1A22" stroke="#34343F" stroke-width="1"/>
+      <circle cx="34" cy="40" r="20" fill="#6366F1" opacity="0.15"/>
+      <text x="34" y="46" text-anchor="middle" font-size="22" fill="#6366F1">⏱</text>
+      <text x="68" y="48" font-size="18" font-weight="600" fill="#F4F4F5">Daily limits</text>
+      <text x="20" y="92" font-size="14" fill="#A1A1AA">Set a max minutes per day.</text>
+      <text x="20" y="114" font-size="14" fill="#A1A1AA">YouTube auto-closes when</text>
+      <text x="20" y="136" font-size="14" fill="#A1A1AA">you hit it.</text>
+    </g>
+    <!-- Card 2 -->
+    <g transform="translate(380, 320)">
+      <rect width="280" height="170" rx="16" fill="#1A1A22" stroke="#34343F" stroke-width="1"/>
+      <circle cx="34" cy="40" r="20" fill="#14B8A6" opacity="0.15"/>
+      <text x="34" y="46" text-anchor="middle" font-size="22" fill="#14B8A6">📅</text>
+      <text x="68" y="48" font-size="18" font-weight="600" fill="#F4F4F5">Schedule blocks</text>
+      <text x="20" y="92" font-size="14" fill="#A1A1AA">Block YouTube during work</text>
+      <text x="20" y="114" font-size="14" fill="#A1A1AA">hours — Mon-Fri 9 to 1?</text>
+      <text x="20" y="136" font-size="14" fill="#A1A1AA">Done.</text>
+    </g>
+    <!-- Card 3 -->
+    <g transform="translate(680, 320)">
+      <rect width="280" height="170" rx="16" fill="#1A1A22" stroke="#34343F" stroke-width="1"/>
+      <circle cx="34" cy="40" r="20" fill="#F59E0B" opacity="0.15"/>
+      <text x="34" y="46" text-anchor="middle" font-size="22" fill="#F59E0B">🍅</text>
+      <text x="68" y="48" font-size="18" font-weight="600" fill="#F4F4F5">Pomodoro built-in</text>
+      <text x="20" y="92" font-size="14" fill="#A1A1AA">25 min focus, 5 min forced</text>
+      <text x="20" y="114" font-size="14" fill="#A1A1AA">break. Long break every</text>
+      <text x="20" y="136" font-size="14" fill="#A1A1AA">4 cycles.</text>
+    </g>
+    <!-- Card 4 -->
+    <g transform="translate(980, 320)">
+      <rect width="220" height="170" rx="16" fill="#1A1A22" stroke="#34343F" stroke-width="1"/>
+      <circle cx="34" cy="40" r="20" fill="#EF4444" opacity="0.15"/>
+      <text x="34" y="46" text-anchor="middle" font-size="22" fill="#EF4444">⛔</text>
+      <text x="68" y="48" font-size="18" font-weight="600" fill="#F4F4F5">Block Shorts</text>
+      <text x="20" y="92" font-size="14" fill="#A1A1AA">/shorts/ URLs redirect to</text>
+      <text x="20" y="114" font-size="14" fill="#A1A1AA">the normal player.</text>
+    </g>
+
+    <!-- Row 2 -->
+    <g transform="translate(80, 510)">
+      <rect width="280" height="170" rx="16" fill="#1A1A22" stroke="#34343F" stroke-width="1"/>
+      <circle cx="34" cy="40" r="20" fill="#8B5CF6" opacity="0.15"/>
+      <text x="34" y="46" text-anchor="middle" font-size="22" fill="#8B5CF6">🧠</text>
+      <text x="68" y="48" font-size="18" font-weight="600" fill="#F4F4F5">Mindful pause</text>
+      <text x="20" y="92" font-size="14" fill="#A1A1AA">Before YouTube loads:</text>
+      <text x="20" y="114" font-size="14" fill="#A1A1AA">"Why are you here?"</text>
+      <text x="20" y="136" font-size="14" fill="#A1A1AA">+ 5 second delay.</text>
+    </g>
+    <g transform="translate(380, 510)">
+      <rect width="280" height="170" rx="16" fill="#1A1A22" stroke="#34343F" stroke-width="1"/>
+      <circle cx="34" cy="40" r="20" fill="#06B6D4" opacity="0.15"/>
+      <text x="34" y="46" text-anchor="middle" font-size="22" fill="#06B6D4">📊</text>
+      <text x="68" y="48" font-size="18" font-weight="600" fill="#F4F4F5">Real stats</text>
+      <text x="20" y="92" font-size="14" fill="#A1A1AA">Time today, week, streak,</text>
+      <text x="20" y="114" font-size="14" fill="#A1A1AA">lifetime — measured, not</text>
+      <text x="20" y="136" font-size="14" fill="#A1A1AA">guessed.</text>
+    </g>
+    <g transform="translate(680, 510)">
+      <rect width="280" height="170" rx="16" fill="#1A1A22" stroke="#34343F" stroke-width="1"/>
+      <circle cx="34" cy="40" r="20" fill="#EC4899" opacity="0.15"/>
+      <text x="34" y="46" text-anchor="middle" font-size="22" fill="#EC4899">🎯</text>
+      <text x="68" y="48" font-size="18" font-weight="600" fill="#F4F4F5">Channel filters</text>
+      <text x="20" y="92" font-size="14" fill="#A1A1AA">Whitelist mode: only the</text>
+      <text x="20" y="114" font-size="14" fill="#A1A1AA">channels you decide.</text>
+      <text x="20" y="136" font-size="14" fill="#A1A1AA">Blacklist mode: never these.</text>
+    </g>
+    <g transform="translate(980, 510)">
+      <rect width="220" height="170" rx="16" fill="#1A1A22" stroke="#34343F" stroke-width="1"/>
+      <circle cx="34" cy="40" r="20" fill="#10B981" opacity="0.15"/>
+      <text x="34" y="46" text-anchor="middle" font-size="22" fill="#10B981">🔒</text>
+      <text x="68" y="48" font-size="18" font-weight="600" fill="#F4F4F5">Zero tracking</text>
+      <text x="20" y="92" font-size="14" fill="#A1A1AA">Everything stays in your</text>
+      <text x="20" y="114" font-size="14" fill="#A1A1AA">browser. No accounts.</text>
+    </g>
+  </g>
+
+  <!-- Footer -->
+  <text x="640" y="750" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="500" fill="#A1A1AA">Free forever · Open source · 100% offline</text>
+</svg>

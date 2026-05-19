@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+  <defs>
+    <linearGradient id="s3bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F0F12"/>
+      <stop offset="100%" stop-color="#1A1A22"/>
+    </linearGradient>
+    <linearGradient id="s3brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#14B8A6"/>
+    </linearGradient>
+    <linearGradient id="s3popup" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1A22"/>
+      <stop offset="100%" stop-color="#16161D"/>
+    </linearGradient>
+    <radialGradient id="s3glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#s3bg)"/>
+  <ellipse cx="900" cy="400" rx="500" ry="400" fill="url(#s3glow)"/>
+
+  <!-- Left side: text -->
+  <text x="80" y="200" font-family="Inter, sans-serif" font-size="20" font-weight="600" letter-spacing="2" fill="#6366F1">ONE CLICK</text>
+  <text x="80" y="270" font-family="Inter, sans-serif" font-size="56" font-weight="800" letter-spacing="-2" fill="#F4F4F5">Four focus modes.</text>
+  <text x="80" y="330" font-family="Inter, sans-serif" font-size="56" font-weight="800" letter-spacing="-2" fill="url(#s3brand)">Pick your level.</text>
+
+  <text x="80" y="400" font-family="Inter, sans-serif" font-size="18" font-weight="400" fill="#A1A1AA">From "just hide Shorts" to "hide literally everything except</text>
+  <text x="80" y="426" font-family="Inter, sans-serif" font-size="18" font-weight="400" fill="#A1A1AA">the current video" — switch instantly from the toolbar popup.</text>
+
+  <!-- Feature bullets -->
+  <g font-family="Inter, sans-serif" font-size="15" fill="#C7C7D1">
+    <circle cx="92" cy="478" r="3" fill="#14B8A6"/>
+    <text x="110" y="484">13 individual hide toggles for full control</text>
+    <circle cx="92" cy="510" r="3" fill="#14B8A6"/>
+    <text x="110" y="516">Beautiful dark/light auto-theming</text>
+    <circle cx="92" cy="542" r="3" fill="#14B8A6"/>
+    <text x="110" y="548">Per-tab status pill so you always know what's active</text>
+    <circle cx="92" cy="574" r="3" fill="#14B8A6"/>
+    <text x="110" y="580">Live stats: minutes today, streak, distractions hidden</text>
+  </g>
+
+  <!-- Right side: mockup of popup -->
+  <g transform="translate(760, 100)">
+    <!-- Outer shadow -->
+    <rect x="-20" y="-10" width="440" height="650" rx="24" fill="#000" opacity="0.35" filter="blur(20)"/>
+    <rect width="400" height="620" rx="20" fill="url(#s3popup)" stroke="#34343F" stroke-width="1"/>
+
+    <!-- Header -->
+    <g transform="translate(20, 24)">
+      <circle cx="14" cy="14" r="11" fill="none" stroke="url(#s3brand)" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="60 90" transform="rotate(-95 14 14)"/>
+      <polygon points="11,9 11,19 19,14" fill="url(#s3brand)"/>
+      <text x="38" y="20" font-family="Inter, sans-serif" font-size="17" font-weight="700" fill="url(#s3brand)">ZenTube</text>
+      <circle cx="365" cy="14" r="14" fill="#25252F"/>
+      <text x="365" y="19" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#C7C7D1">⚙</text>
+    </g>
+
+    <!-- Master toggle card -->
+    <g transform="translate(20, 70)">
+      <rect width="360" height="56" rx="12" fill="#25252F" stroke="#34343F" stroke-width="1"/>
+      <text x="16" y="26" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#F4F4F5">ZenTube</text>
+      <text x="16" y="44" font-family="Inter, sans-serif" font-size="12" fill="#A1A1AA">Active on YouTube</text>
+      <rect x="305" y="18" width="40" height="22" rx="11" fill="url(#s3brand)"/>
+      <circle cx="335" cy="29" r="8" fill="#fff"/>
+    </g>
+
+    <!-- Focus mode section -->
+    <text x="20" y="156" font-family="Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="0.6" fill="#9494A0">FOCUS MODE</text>
+    <g transform="translate(20, 168)">
+      <rect width="360" height="36" rx="10" fill="#25252F"/>
+      <rect x="3" y="3" width="87" height="30" rx="7" fill="#1A1A22"/>
+      <text x="46" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#A1A1AA">Off</text>
+      <text x="135" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#A1A1AA">Casual</text>
+      <rect x="183" y="3" width="87" height="30" rx="7" fill="url(#s3brand)"/>
+      <text x="226" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#fff">Learning</text>
+      <text x="318" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#A1A1AA">Deep</text>
+    </g>
+    <text x="20" y="232" font-family="Inter, sans-serif" font-size="12" fill="#A1A1AA">Hides home feed, recommendations, Shorts,</text>
+    <text x="20" y="248" font-family="Inter, sans-serif" font-size="12" fill="#A1A1AA">trending, and view counts. Comments stay.</text>
+
+    <!-- Stats row -->
+    <g transform="translate(20, 270)">
+      <rect width="360" height="80" rx="12" fill="#1A1A22" stroke="#34343F" stroke-width="1"/>
+      <text x="60" y="36" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="url(#s3brand)">14m</text>
+      <text x="60" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#9494A0">TODAY</text>
+      <text x="180" y="36" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="url(#s3brand)">7🔥</text>
+      <text x="180" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#9494A0">DAY STREAK</text>
+      <text x="300" y="36" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="url(#s3brand)">42</text>
+      <text x="300" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#9494A0">HIDDEN</text>
+    </g>
+
+    <!-- Quick hide list -->
+    <text x="20" y="380" font-family="Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="0.6" fill="#9494A0">QUICK HIDE</text>
+    <g transform="translate(20, 392)">
+      <rect width="360" height="190" rx="12" fill="#1A1A22" stroke="#34343F" stroke-width="1"/>
+      <line x1="0" y1="38" x2="360" y2="38" stroke="#25252F"/>
+      <line x1="0" y1="76" x2="360" y2="76" stroke="#25252F"/>
+      <line x1="0" y1="114" x2="360" y2="114" stroke="#25252F"/>
+      <line x1="0" y1="152" x2="360" y2="152" stroke="#25252F"/>
+
+      <text x="16" y="24" font-family="Inter, sans-serif" font-size="13" fill="#F4F4F5">Home feed</text>
+      <rect x="316" y="11" width="32" height="18" rx="9" fill="url(#s3brand)"/>
+      <circle cx="339" cy="20" r="7" fill="#fff"/>
+
+      <text x="16" y="62" font-family="Inter, sans-serif" font-size="13" fill="#F4F4F5">Recommendations</text>
+      <rect x="316" y="49" width="32" height="18" rx="9" fill="url(#s3brand)"/>
+      <circle cx="339" cy="58" r="7" fill="#fff"/>
+
+      <text x="16" y="100" font-family="Inter, sans-serif" font-size="13" fill="#F4F4F5">Shorts</text>
+      <rect x="316" y="87" width="32" height="18" rx="9" fill="url(#s3brand)"/>
+      <circle cx="339" cy="96" r="7" fill="#fff"/>
+
+      <text x="16" y="138" font-family="Inter, sans-serif" font-size="13" fill="#F4F4F5">View / like counts</text>
+      <rect x="316" y="125" width="32" height="18" rx="9" fill="url(#s3brand)"/>
+      <circle cx="339" cy="134" r="7" fill="#fff"/>
+
+      <text x="16" y="176" font-family="Inter, sans-serif" font-size="13" fill="#F4F4F5">Grayscale</text>
+      <rect x="316" y="163" width="32" height="18" rx="9" fill="#34343F"/>
+      <circle cx="323" cy="172" r="7" fill="#fff"/>
+    </g>
+  </g>
+</svg>

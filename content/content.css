@@ -1,0 +1,592 @@
+/* ============================================================
+   ZenTube — Content CSS
+   Each block is gated by a class on <html>. The content script
+   toggles classes based on user settings. !important is used
+   because YouTube inlines a lot of styles.
+   ============================================================ */
+
+/* ---------- Home feed ---------- */
+html.zt-hide-home ytd-browse[page-subtype="home"] #contents.ytd-rich-grid-renderer,
+html.zt-hide-home ytd-browse[page-subtype="home"] ytd-rich-grid-renderer,
+html.zt-hide-home ytd-browse[page-subtype="home"] #header.ytd-rich-grid-renderer,
+html.zt-hide-home ytd-two-column-browse-results-renderer[page-subtype="home"] {
+  display: none !important;
+}
+
+html.zt-hide-home ytd-browse[page-subtype="home"]::after {
+  content: "";
+  display: block;
+  min-height: 60vh;
+}
+
+/* ---------- Sidebar recommendations (watch page) ---------- */
+html.zt-hide-related #related,
+html.zt-hide-related ytd-watch-next-secondary-results-renderer,
+html.zt-hide-related #secondary.ytd-watch-flexy {
+  display: none !important;
+}
+
+html.zt-hide-related #primary.ytd-watch-flexy {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+}
+
+/* ---------- Comments ---------- */
+html.zt-hide-comments ytd-comments,
+html.zt-hide-comments #comments {
+  display: none !important;
+}
+
+/* ---------- Shorts ---------- */
+html.zt-hide-shorts ytd-rich-shelf-renderer[is-shorts],
+html.zt-hide-shorts ytd-reel-shelf-renderer,
+html.zt-hide-shorts ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]),
+html.zt-hide-shorts a[title="Shorts"],
+html.zt-hide-shorts ytd-guide-entry-renderer:has(a[title="Shorts"]),
+html.zt-hide-shorts ytd-mini-guide-entry-renderer[aria-label="Shorts"],
+html.zt-hide-shorts ytd-video-renderer:has(a[href*="/shorts/"]),
+html.zt-hide-shorts ytd-grid-video-renderer:has(a[href*="/shorts/"]),
+html.zt-hide-shorts ytd-rich-item-renderer:has(a[href*="/shorts/"]),
+html.zt-hide-shorts ytd-compact-video-renderer:has(a[href*="/shorts/"]),
+html.zt-hide-shorts ytd-reel-item-renderer {
+  display: none !important;
+}
+
+/* If user lands on a /shorts/ URL directly, redirect happens via JS */
+
+/* ---------- Trending / Explore ---------- */
+html.zt-hide-trending a[title="Trending"],
+html.zt-hide-trending ytd-guide-entry-renderer:has(a[title="Trending"]),
+html.zt-hide-trending a[title="Explore"],
+html.zt-hide-trending ytd-guide-section-renderer:nth-of-type(2) {
+  display: none !important;
+}
+
+/* ---------- End screen ---------- */
+html.zt-hide-endscreen .ytp-endscreen-content,
+html.zt-hide-endscreen .ytp-ce-element,
+html.zt-hide-endscreen .ytp-ce-covering-overlay,
+html.zt-hide-endscreen .html5-endscreen,
+html.zt-hide-endscreen .ytp-pause-overlay {
+  display: none !important;
+}
+
+/* ---------- Live chat ---------- */
+html.zt-hide-chat ytd-live-chat-frame,
+html.zt-hide-chat #chat-container,
+html.zt-hide-chat #chat {
+  display: none !important;
+}
+
+/* ---------- Notifications bell ---------- */
+html.zt-hide-notifications ytd-notification-topbar-button-renderer,
+html.zt-hide-notifications #notification-button,
+html.zt-hide-notifications ytd-masthead #buttons ytd-notification-topbar-button-renderer {
+  display: none !important;
+}
+
+/* ---------- Search suggestions ---------- */
+html.zt-hide-search-suggestions .sbsb_c,
+html.zt-hide-search-suggestions ytd-searchbox-spt #search-suggestions-box,
+html.zt-hide-search-suggestions tp-yt-iron-dropdown.ytd-searchbox {
+  display: none !important;
+}
+
+/* ---------- View / like / subscriber counts ---------- */
+html.zt-hide-view-count .view-count,
+html.zt-hide-view-count ytd-video-view-count-renderer,
+html.zt-hide-view-count #info-text .view-count,
+html.zt-hide-view-count yt-formatted-string.view-count,
+html.zt-hide-view-count #count .ytd-video-primary-info-renderer {
+  visibility: hidden !important;
+}
+
+html.zt-hide-like-count #segmented-like-button .yt-spec-button-shape-next__button-text-content,
+html.zt-hide-like-count ytd-toggle-button-renderer #text {
+  font-size: 0 !important;
+}
+
+html.zt-hide-sub-count #subscriber-count,
+html.zt-hide-sub-count yt-formatted-string#owner-sub-count {
+  visibility: hidden !important;
+}
+
+/* Hide view count next to video thumbnails on lists */
+html.zt-hide-view-count ytd-video-meta-block #metadata-line span:first-child,
+html.zt-hide-view-count #metadata-line .inline-metadata-item:first-child {
+  visibility: hidden !important;
+}
+
+/* ---------- Thumbnails (titles only mode) ---------- */
+html.zt-hide-thumbnails ytd-thumbnail,
+html.zt-hide-thumbnails yt-image,
+html.zt-hide-thumbnails ytd-rich-grid-media #thumbnail,
+html.zt-hide-thumbnails ytd-compact-video-renderer #thumbnail,
+html.zt-hide-thumbnails ytd-video-renderer #thumbnail {
+  background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 100%) !important;
+}
+
+html.zt-hide-thumbnails ytd-thumbnail img,
+html.zt-hide-thumbnails ytd-thumbnail yt-image img,
+html.zt-hide-thumbnails yt-image img,
+html.zt-hide-thumbnails ytd-thumbnail-overlay-time-status-renderer img {
+  opacity: 0 !important;
+  filter: blur(20px) !important;
+}
+
+html.zt-hide-thumbnails ytd-rich-item-renderer #video-title-link,
+html.zt-hide-thumbnails ytd-compact-video-renderer #video-title {
+  font-size: 1.1em !important;
+  margin-top: 8px !important;
+}
+
+/* ---------- Grayscale mode ---------- */
+html.zt-grayscale ytd-app {
+  filter: grayscale(1) contrast(1.05) !important;
+}
+
+/* ---------- Hide masthead extras when in deep focus ---------- */
+html.zt-deep-focus ytd-masthead #buttons-shoulder,
+html.zt-deep-focus ytd-masthead #voice-search-button,
+html.zt-deep-focus ytd-mini-guide-renderer,
+html.zt-deep-focus ytd-guide-renderer #sections > ytd-guide-section-renderer:nth-child(n+3) {
+  display: none !important;
+}
+
+/* ---------- ZenTube widget (overlay shown on YouTube pages) ---------- */
+#zentube-widget {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 99999;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#zentube-widget.zt-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#zentube-widget .zt-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(15, 15, 15, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  user-select: none;
+}
+
+#zentube-widget .zt-pill:hover {
+  background: rgba(30, 30, 30, 0.95);
+}
+
+#zentube-widget .zt-pill .zt-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #14B8A6;
+  box-shadow: 0 0 8px #14B8A6;
+}
+
+#zentube-widget.zt-warning .zt-dot {
+  background: #F59E0B;
+  box-shadow: 0 0 8px #F59E0B;
+}
+
+#zentube-widget.zt-blocked .zt-dot {
+  background: #EF4444;
+  box-shadow: 0 0 8px #EF4444;
+}
+
+/* ---------- Mindful pause overlay ---------- */
+#zentube-mindful-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: rgba(10, 10, 15, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  animation: ztFadeIn 0.4s ease;
+}
+
+@keyframes ztFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#zentube-mindful-overlay .zt-mindful-box {
+  max-width: 480px;
+  width: 90%;
+  text-align: center;
+  color: #fff;
+  padding: 40px;
+}
+
+#zentube-mindful-overlay .zt-mindful-logo {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  display: block;
+}
+
+#zentube-mindful-overlay h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  letter-spacing: -0.5px;
+}
+
+#zentube-mindful-overlay p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0 0 32px;
+}
+
+#zentube-mindful-overlay input,
+#zentube-mindful-overlay textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+#zentube-mindful-overlay input:focus,
+#zentube-mindful-overlay textarea:focus {
+  outline: none;
+  border-color: #6366F1;
+}
+
+#zentube-mindful-overlay .zt-mindful-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+#zentube-mindful-overlay button {
+  flex: 1;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+#zentube-mindful-overlay button:active {
+  transform: scale(0.98);
+}
+
+#zentube-mindful-overlay .zt-btn-primary {
+  background: linear-gradient(135deg, #6366F1 0%, #14B8A6 100%);
+  color: #fff;
+}
+
+#zentube-mindful-overlay .zt-btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#zentube-mindful-overlay .zt-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+#zentube-mindful-overlay .zt-timer {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 16px;
+}
+
+/* ---------- Time-limit hit overlay ---------- */
+#zentube-limit-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999998;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.96) 0%, rgba(20, 184, 166, 0.96) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+#zentube-limit-overlay .zt-limit-box {
+  max-width: 440px;
+  padding: 40px;
+}
+
+#zentube-limit-overlay h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  letter-spacing: -0.5px;
+}
+
+#zentube-limit-overlay p {
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 0 0 28px;
+  opacity: 0.95;
+}
+
+#zentube-limit-overlay button {
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#zentube-limit-overlay button:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* ---------- Custom homepage replacement ---------- */
+#zentube-home-replacement {
+  position: fixed;
+  inset: 56px 0 0 0;
+  z-index: 1000;
+  background: var(--yt-spec-base-background, #0f0f0f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--yt-spec-text-primary, #fff);
+  padding: 24px;
+}
+
+#zentube-home-replacement .zt-home-box {
+  max-width: 540px;
+  text-align: center;
+}
+
+#zentube-home-replacement .zt-greeting {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--yt-spec-text-secondary, #aaa);
+  margin-bottom: 12px;
+}
+
+#zentube-home-replacement .zt-quote {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.4px;
+  margin-bottom: 24px;
+}
+
+#zentube-home-replacement .zt-time {
+  font-size: 64px;
+  font-weight: 200;
+  letter-spacing: -2px;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 8px;
+}
+
+#zentube-home-replacement .zt-date {
+  font-size: 15px;
+  color: var(--yt-spec-text-secondary, #aaa);
+  margin-bottom: 40px;
+}
+
+#zentube-home-replacement .zt-search-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--yt-spec-text-secondary, #aaa);
+}
+
+#zentube-home-replacement kbd {
+  padding: 2px 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+/* Auto-pause indicator */
+.zt-auto-paused-indicator {
+  position: fixed;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(99, 102, 241, 0.95);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  z-index: 99999;
+  animation: ztSlideDown 0.3s ease;
+}
+
+@keyframes ztSlideDown {
+  from { transform: translate(-50%, -20px); opacity: 0; }
+  to { transform: translate(-50%, 0); opacity: 1; }
+}
+
+/* ---------- Pomodoro widget ---------- */
+#zentube-pomodoro-widget {
+  position: fixed;
+  bottom: 60px;
+  right: 16px;
+  z-index: 99999;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.zt-pomo-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.95), rgba(20, 184, 166, 0.95));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.zt-pomo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  animation: ztPomoPulse 2s ease-in-out infinite;
+}
+
+@keyframes ztPomoPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.zt-pomo-time {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.zt-pomo-label {
+  opacity: 0.9;
+}
+
+.zt-pomo-stop {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  font-size: 11px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+}
+
+.zt-pomo-stop:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* ---------- Pomodoro break overlay ---------- */
+#zentube-pomodoro-break {
+  position: fixed;
+  inset: 0;
+  z-index: 999998;
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.97) 0%, rgba(99, 102, 241, 0.97) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  animation: ztFadeIn 0.4s ease;
+}
+
+.zt-pomo-break-box {
+  text-align: center;
+  max-width: 420px;
+  padding: 40px;
+}
+
+.zt-pomo-break-box h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 24px;
+  letter-spacing: -0.5px;
+}
+
+.zt-pomo-break-time {
+  font-size: 88px;
+  font-weight: 200;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -3px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.zt-pomo-break-box p {
+  font-size: 15px;
+  opacity: 0.92;
+  line-height: 1.5;
+  margin: 0 0 28px;
+}
+
+.zt-pomo-skip-stop {
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.zt-pomo-skip-stop:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
